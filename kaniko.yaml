@@ -12,7 +12,7 @@ spec:
       initContainers:
         - name: git-pull-init
           image: alpine/git:latest
-          args: ["clone","https://github.com/james65535/vcas-demo.git","/workspace"]
+          args: ["clone","https://github.com/cdan/vcas-demo.git","/workspace"]
           volumeMounts:
             - name: workspace-vol
               mountPath: /workspace
@@ -21,7 +21,7 @@ spec:
         image: gcr.io/kaniko-project/executor:latest
         args: ["--dockerfile=/workspace/Dockerfile",
                "--context=/workspace",
-               "--destination=james65535/vcas-demo:v24"]
+               "--destination=cdan/vcas-demo:v24"]
         volumeMounts:
           - name: workspace-vol
             mountPath: /workspace
