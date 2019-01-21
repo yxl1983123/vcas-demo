@@ -1,2 +1,4 @@
 main
 k8s-deploy.yaml
+.DS_Store
+.gitignore
