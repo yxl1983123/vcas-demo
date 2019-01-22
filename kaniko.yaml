@@ -8,6 +8,7 @@ spec:
     metadata:
       name: kaniko-job
     spec:
+      ttlSecondsAfterFinished: 60
       restartPolicy: Never
       initContainers:
         - name: git-pull-init
