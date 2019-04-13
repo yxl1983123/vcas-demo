@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: vcas-demo
-        image: cdan/vcas-demo:${input.GIT_COMMIT_ID}
+        image: cdan/vcas-demo:$${GIT_COMMIT_ID}
         ports:
         - containerPort: 8080
         env:
