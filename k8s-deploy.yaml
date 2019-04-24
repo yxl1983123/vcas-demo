@@ -36,18 +36,3 @@ spec:
         - name: WF_PROXY
           value: "wavefront-proxy:2878"
         imagePullPolicy: Always
----
-apiVersion: contour.heptio.com/v1beta1
-kind: IngressRoute
-metadata:
-  name: vcas-ir
-  namespace: default
-spec:
-  virtualhost:
-    fqdn: contour.cdan-test-c23cfd64-12dd-11e9-958c-0a8a1b3b0536.93a9beeb-d761-4551-bdba-e1f8b99fb995.vke-user.com
-  routes:
-    - match: /cdan
-      #prefixRewrite: "/"
-      services:
-        - name: vcas-demo-svc
-          port: 80
