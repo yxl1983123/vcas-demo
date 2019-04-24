@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: kaniko-job
+  namespace: default
 spec:
   completions: 1
   template:
