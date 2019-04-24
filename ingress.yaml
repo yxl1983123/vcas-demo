@@ -1,12 +1,14 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: contour.heptio.com/v1beta1
+kind: IngressRoute
 metadata:
-  name: vcas-ingress
+  name: vcas-ir
+  namespace: default
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /cdan
-        backend:
-          serviceName: vcas-demo-svc
-          servicePort: 80
+  virtualhost:
+    fqdn: contour.cdan-test-c23cfd64-12dd-11e9-958c-0a8a1b3b0536.93a9beeb-d761-4551-bdba-e1f8b99fb995.vke-user.com
+  routes:
+    - match: /cdan
+      #prefixRewrite: "/"
+      services:
+        - name: vcas-demo-svc
+          port: 80
