@@ -14,7 +14,7 @@ spec:
       initContainers:
         - name: git-pull-init
           image: alpine/git:latest
-          args: ["clone","https://github.com/tyuan/vcas-demo.git","/workspace"]
+          args: ["clone","https://github.com/yxl1983123/vcas-demo.git","/workspace"]
           volumeMounts:
             - name: workspace-vol
               mountPath: /workspace
